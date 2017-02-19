@@ -6,15 +6,23 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:html": "pug src/markup/index.pug --basedir src --path src/markup/** --out public --pretty",
+    "prebuild:css": "node-sass --indent-type space src/styles/style.sass --include-path src/styles/** --output public/assets/css --recursive",
+    "build:css": "postcss --use autoprefixer --config autoprefixer.json --no-map --output public/assets/css/style.css public/assets/css/style.css",
+    "watch:html": "npm run build:html -- --watch",
+    "watch:css": "concurrently \"npm run prebuild:css -- --watch\" \"npm run build:css -- --watch\"",
     "serve": "browser-sync start -c bs-config.js",
-    "start": "concurrently \"npm run build:html\" \"npm run serve\""
+    "start": "concurrently \"npm run watch:html\" \"npm run watch:css\" \"npm run serve\""
   },
   "author": "abdusa (abdusa.alam@gmail.com)",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^6.7.3",
+    "better-npm-run": "0.0.14",
     "browser-sync": "latest",
-    "chokidar": "latest",
     "concurrently": "^3.3.0",
+    "node-sass": "^4.5.0",
+    "postcss": "^5.2.14",
+    "postcss-cli": "^3.0.0-beta",
     "pug": "latest"
   }
 }
