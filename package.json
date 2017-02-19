@@ -1,0 +1,17 @@
+{
+  "name": "agathis",
+  "version": "1.0.0",
+  "description": "Frontend Development Environment using NPM Scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:html": "pug src/markup/index.pug --basedir src --path src/markup/** --out public --pretty" 
+  },
+  "author": "abdusa (abdusa.alam@gmail.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "latest",
+    "chokidar": "latest",
+    "pug": "latest"
+  }
+}
