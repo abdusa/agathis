@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:html": "pug src/markup/index.pug --basedir src --path src/markup/** --out public --pretty" 
+    "build:html": "pug src/markup/index.pug --basedir src --path src/markup/** --out public --pretty",
+    "serve": "browser-sync start -c bs-config.js",
+    "start": "concurrently \"npm run build:html\" \"npm run serve\""
   },
   "author": "abdusa (abdusa.alam@gmail.com)",
   "license": "MIT",
   "devDependencies": {
     "browser-sync": "latest",
     "chokidar": "latest",
+    "concurrently": "^3.3.0",
     "pug": "latest"
   }
 }
