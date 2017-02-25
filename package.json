@@ -21,7 +21,6 @@
     "chokidar": "^1.6.1",
     "concurrently": "^3.3.0",
     "html-minifier": "^3.3.3",
-    "http-proxy-middleware": "^0.17.3",
     "node-sass": "^4.5.0",
     "postcss": "^5.2.14",
     "postcss-cli": "^3.0.0-beta",

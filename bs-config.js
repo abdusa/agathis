@@ -1,5 +1,5 @@
-let proxyMiddleware = require('http-proxy-middleware');
-let proxy = proxyMiddleware('/ajax/', { target: 'http://new.aa-alam.ndvl/ajax/' });
+// let proxyMiddleware = require('http-proxy-middleware');
+// let proxy = proxyMiddleware('/ajax/', { target: 'http://new.aa-alam.ndvl/ajax/' });
 
 module.exports = {
   "ui": false,
@@ -14,7 +14,6 @@ module.exports = {
     baseDir: 'public',
     index: 'index.html',
   },
-  "middleware": [proxy],
   "notify": false,
   "injectChanges": true
 };
